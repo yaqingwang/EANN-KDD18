@@ -1,7 +1,7 @@
 # EANN-KDD18
 
 
-[EANN: event-adversarial neural networks for multi modal-fake news detection](https://dl.acm.org/citation.cfm?id=3219819.3219903)  
+[EANN: Event Adversarial Neural Networks for Multi-Modal Fake News Detection](https://dl.acm.org/citation.cfm?id=3219819.3219903)  
  [Yaqing Wang](http://www.acsu.buffalo.edu/~yaqingwa/),
  [Fenglong Ma](http://www.acsu.buffalo.edu/~fenglong/), 
  Zhiwei Jin, Ye Yuan, 
