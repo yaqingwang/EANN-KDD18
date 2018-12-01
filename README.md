@@ -22,6 +22,7 @@ Comparision between reduced model w/o adversarial and EANN(w adversarial)
 <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/Accuracy.png" width="350">  <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/F1.png" width="350">
 
 The feature representations learned by the proposed model EANN (right) are more discriminable than fake news detection without event discriminator.
+
 <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/baseline_tsne.png" width="256">  <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/model_tsne.png" width="256">
  
  
