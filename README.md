@@ -13,7 +13,12 @@
  SUNY Buffalo. KDD, 2018.
  
  ## Main Idea
-One of the unique challenges for fake news detection on social media is how to identify fake news on  **newly emerged events**.The EANN is desgined to  __extract shared features among all events__ to effectively improve the performance of fake news detection on never-seen events.
+One of the unique challenges for fake news detection on social media is how to identify fake news on  **newly emerged events**. The EANN is desgined to  __extract shared features among all events__ to effectively improve the performance of fake news detection on never-seen events.
+
+<center>
+<img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/baseline_tsne.eps" width="128">
+ <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/model_tsne.eps", width="128">
+ </center>
  
  ## Citation
 If you use this code for your research, please cite our [paper](https://dl.acm.org/citation.cfm?id=3219819.3219903):
