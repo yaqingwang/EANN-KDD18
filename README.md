@@ -17,7 +17,9 @@ One of the unique challenges for fake news detection on social media is how to i
 
 
 ## Experiment
-<img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/Accuracy.png" width="400">  <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/F1.png" width="400">
+Comparision between reduced model w/o adversarial and EANN(w adversarial)
+
+<img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/Accuracy.png" width="300">  <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/F1.png" width="300">
 
 <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/baseline_tsne.png" width="256">  <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/model_tsne.png" width="256">
  
