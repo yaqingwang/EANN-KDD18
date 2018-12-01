@@ -16,8 +16,8 @@
 One of the unique challenges for fake news detection on social media is how to identify fake news on  **newly emerged events**. The EANN is desgined to  __extract shared features among all events__ to effectively improve the performance of fake news detection on never-seen events.
 
 <center>
-<img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/baseline_tsne.eps" width="128">
- <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/model_tsne.eps", width="128">
+<img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/baseline_tsne.jpeg" width="128">
+ <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/model_tsne.jpeg", width="128">
  </center>
  
  ## Citation
