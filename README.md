@@ -21,7 +21,7 @@ One of the unique challenges for fake news detection on social media is how to i
 ## Experiment
 Comparision between reduced model (w/o adversarial) and EANN(w adversarial)
 
-<img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/Accuracy.png" width="350">  <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/F1.png" width="350">
+<img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/Accuracy.png" width="300">  <img src="https://github.com/yaqingwang/EANN-KDD18/blob/master/Fig/F1.png" width="300">
 
 The feature representations learned by the proposed model EANN (right) are more discriminable than fake news detection (w/o adv).
 
