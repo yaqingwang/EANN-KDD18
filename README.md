@@ -12,9 +12,12 @@
  
  SUNY Buffalo. KDD, 2018.
  
+## Files
  The Data folder contains the partial dataset. 
+ The src folder contains the data preprocessing file: process_data_weibo.py, and the model files: EANN.py and EANN_text.py.
+ EANN.py is for text and image multimodal features and EANN_text.py is only textual featues.
  
-##### How to run
+## How to run
 
 ```
 python EANN.py  or python EANN_text.py
