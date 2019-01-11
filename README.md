@@ -12,7 +12,13 @@
  
  SUNY Buffalo. KDD, 2018.
  
+ The Data folder contains the partial dataset. 
  
+##### How to run
+
+```
+python EANN.py  or python EANN_text.py
+```
  
  ## Main Idea
 One of the unique challenges for fake news detection on social media is how to identify fake news on  **newly emerged events**. The EANN is desgined to  __extract shared features among all events__ to effectively improve the performance of fake news detection on never-seen events.
