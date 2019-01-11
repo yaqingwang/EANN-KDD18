@@ -13,7 +13,9 @@
  SUNY Buffalo. KDD, 2018.
  
 ## Files
- The __data__ folder contains the partial dataset. 
+ The __data__ folder contains the partial dataset. The train_id, validate_id and test_id are the event id dictionaries. 
+ 
+ 
  The __src__ folder contains the data preprocessing file: __process_data_weibo.py__, and the model files: __EANN.py__ and __EANN_text.py__.
  EANN.py is for text and image multimodal features and EANN_text.py is only textual featues.
  
