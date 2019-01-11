@@ -17,7 +17,7 @@
  
  
  The __src__ folder contains the data preprocessing file: __process_data_weibo.py__, and the model files: __EANN.py__ and __EANN_text.py__.
- EANN.py is for text and image multimodal features and EANN_text.py is only textual featues.
+ EANN.py is for text and image multimodal features and EANN_text.py is only using textual featues.
  
 ## How to run
 
