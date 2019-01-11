@@ -21,6 +21,7 @@
  
 ## How to run
 
+Note: This code is written in Python2!
 ```
 python EANN.py  or python EANN_text.py
 ```
