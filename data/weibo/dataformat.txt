@@ -1,4 +1,4 @@
-1. This is an example dataset. Tweets are separated into training set and testing set. For each set, there are two files storing rumor and non-rumor tweets respectively.
+1. This is an example dataset. Tweets are splitted into training set and testing set. For each set, there are two files storing rumor and non-rumor tweets respectively.
 2. Images are sepreated into two folders according to their labels. Each image is named by the last part of it's url attached in corresponding tweet.
 3. The data format in each txt file is as follow:
 tweet id|user name|tweet url|user url|publish time| original?|retweet count|comment count|praise count|user id|user authentication type|user fans count|user follow count|user tweet count|publish platform
