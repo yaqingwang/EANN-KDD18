@@ -284,7 +284,7 @@ def main(args):
 
     validate_dataset = Rumor_Data(validation)
 
-    test_dataset = Rumor_Data(test) # not used
+    test_dataset = Rumor_Data(test) 
 
 
 
@@ -431,7 +431,6 @@ def main(args):
                 os.mkdir(args.output_file)
 
             best_validate_dir = args.output_file + str(epoch + 1) + '.pkl'
-            best_list[0] = best_validate_dir
             torch.save(model.state_dict(), best_validate_dir)
 
 
@@ -439,8 +438,7 @@ def main(args):
         # print ('Epoch: %d, Mean_Cost: %.4f, Duration: %.4f, Mean_Train_Acc: %.4f, Mean_Test_Acc: %.4f'
         # % (epoch + 1, np.mean(cost_vector), duration, np.mean(acc_vector), np.mean(test_acc_vector)))
         # best_validate_dir = args.output_file + 'weibo_GPU2_out.' + str(52) + '.pkl'
-    test = True
-    #best_list = [args.output_file + '1_20_weibo_GPU2_out.' + str(97) + '.pkl']
+    
 
 
     # Test the Model
@@ -479,9 +477,6 @@ def main(args):
     
     test_confusion_matrix = metrics.confusion_matrix(test_true, test_pred)
 
-    #top_n_id = get_top_post(test_score, test_true, test_id)
-    #print(top_n_id)
-
     print("Classification Acc: %.4f, AUC-ROC: %.4f"
           % (test_accuracy, test_aucroc))
     print("Classification report:\n%s\n"
@@ -489,15 +484,6 @@ def main(args):
     print("Classification confusion matrix:\n%s\n"
           % (test_confusion_matrix))
 
-    # print('Saving results')
-    # obj_arr = np.zeros((6,), dtype=np.object)
-    # obj_arr[0] = args
-    # obj_arr[1] = [test_aucroc, test_aucpr, test_precision, test_recall, test_f1, test_accuracy]
-    # obj_arr[2] = test_confusion_matrix
-    # obj_arr[3] = test_score
-    # obj_arr[4] = test_pred
-    # obj_arr[5] = test_true
-    # sio.savemat(best_validate_dir + '_results.mat', {'results': obj_arr})
 
 
 def parse_arguments(parser):
@@ -621,16 +607,11 @@ def transform(event):
 if __name__ == '__main__':
     parse = argparse.ArgumentParser()
     parser = parse_arguments(parse)
-    train = '../Data/weibo/train.pickle'
-    test = '../Data/weibo/test.pickle'
+    train = '' 
+    test = ''
     output = '../Data/weibo/RESULT/'
     args = parser.parse_args([train, test, output])
-    # #    print(args)
+    
     main(args)
-    #word_vector_path = '../Data/weibo/word_embedding.pickle'
-    # f = open(word_vector_path, 'rb')
-    # weight = pickle.load(f)  # W, W2, word_idx_map, vocab
-    # W, W2, word_idx_map, vocab, max_len = weight[0], weight[1], weight[2], weight[3], weight[4]
-    # print(len(vocab))
-    # print(len(W))
+   
 
