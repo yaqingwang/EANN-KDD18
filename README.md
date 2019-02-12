@@ -13,7 +13,7 @@
  SUNY Buffalo. KDD, 2018.
  
 ## Files
- The __data__ folder contains the partial dataset. The train_id, validate_id and test_id are the event id dictionaries. 
+ The __data__ folder contains the partial dataset. The train_id, validate_id and test_id are event id. 
  
  
  The __src__ folder contains the data preprocessing file: __process_data_weibo.py__, and the model files: __EANN.py__ and __EANN_text.py__.
