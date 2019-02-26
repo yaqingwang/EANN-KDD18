@@ -6,7 +6,7 @@
  [Fenglong Ma](http://www.acsu.buffalo.edu/~fenglong/), 
  Zhiwei Jin, Ye Yuan, 
  Guangxu Xun,
- Kishlay Jha,
+ [Kishlay Jha](http://people.virginia.edu/~kj6ww/),
   [Lu Su](https://cse.buffalo.edu/~lusu/),
  [Jing Gao](https://cse.buffalo.edu/~jing/)
  
