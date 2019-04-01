@@ -1,4 +1,4 @@
-# EANN-KDD18
+# ICDM17
 
 
 [Discovering Truths from Distributed Data](https://ieeexplore.ieee.org/document/8215523)  
