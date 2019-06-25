@@ -45,9 +45,6 @@ class Rumor_Data(Dataset):
 
 
 class ReverseLayerF(Function):
-
-
-
     #def __init__(self, lambd):
         #self.lambd = lambd
 
@@ -96,8 +93,6 @@ class CNN_Fusion(nn.Module):
         self.convs = nn.ModuleList([nn.Conv2d(channel_in, filter_num, (K, emb_dim)) for K in window_size])
         self.fc1 = nn.Linear(len(window_size) * filter_num, self.hidden_size)
 
-
-
         self.dropout = nn.Dropout(args.dropout)
 
         #IMAGE
@@ -113,16 +108,11 @@ class CNN_Fusion(nn.Module):
         self.image_adv = nn.Linear(self.hidden_size,  int(self.hidden_size))
         self.image_encoder = nn.Linear(self.hidden_size, self.hidden_size)
 
-
-
         ###social context
         self.social = nn.Linear(self.social_size, self.hidden_size)
 
-
         ##ATTENTION
         self.attention_layer = nn.Linear(self.hidden_size, emb_dim)
-
-
 
         ## Class  Classifier
         self.class_classifier = nn.Sequential()
@@ -136,7 +126,6 @@ class CNN_Fusion(nn.Module):
         #self.class_classifier.add_module('c_fc3', nn.Linear(100, 10))
         self.class_classifier.add_module('c_softmax', nn.Softmax(dim=1))
 
-
         ###Event Classifier
         self.domain_classifier = nn.Sequential()
         self.domain_classifier.add_module('d_fc1', nn.Linear(self.hidden_size, self.hidden_size))
@@ -144,8 +133,6 @@ class CNN_Fusion(nn.Module):
         self.domain_classifier.add_module('d_relu1', nn.LeakyReLU(True))
         self.domain_classifier.add_module('d_fc2', nn.Linear(self.hidden_size, self.event_num))
         self.domain_classifier.add_module('d_softmax', nn.Softmax(dim=1))
-
-
 
         ####Image and Text Classifier
         self.modal_classifier = nn.Sequential()
@@ -172,14 +159,7 @@ class CNN_Fusion(nn.Module):
         return x
 
     def forward(self, text, mask):
-
-       
-
-
-
-
-
-
+        
         #########CNN##################
         text = self.embed(text)
         text = text * mask.unsqueeze(2).expand_as(text)
@@ -191,22 +171,13 @@ class CNN_Fusion(nn.Module):
         text = F.relu(self.fc1(text))
         #text = self.dropout(text)
 
-
-
-       
-
-
         ### Class
         #class_output = self.class_classifier(text_image)
         class_output = self.class_classifier(text)
         ## Domain
         reverse_feature = grad_reverse(text)
         domain_output = self.domain_classifier(reverse_feature)
-        #
-        
-
-
-
+     
         return class_output, domain_output
 
 def to_var(x):
@@ -337,8 +308,6 @@ def main(args):
         optimizer.lr = lr
         #rgs.lambd = lambd
 
-
-
         start_time = time.time()
         cost_vector = []
         class_cost_vector = []
@@ -394,7 +363,6 @@ def main(args):
             #     train_true = np.concatenate((train_true, to_np(train_labels.squeeze())), axis=0)
 
 
-
         model.eval()
         validate_acc_vector_temp = []
         for i, (validate_data, validate_labels, event_labels) in enumerate(validate_loader):
@@ -413,11 +381,6 @@ def main(args):
         validate_acc = np.mean(validate_acc_vector_temp)
         valid_acc_vector.append(validate_acc)
         model.train()
-
-        
-
-
-
         print ('Epoch [%d/%d],  Loss: %.4f, Class Loss: %.4f, validate loss: %.4f, Train_Acc: %.4f,  Validate_Acc: %.4f.'
                 % (
                 epoch + 1, args.num_epochs,  np.mean(cost_vector), np.mean(class_cost_vector), np.mean(vali_cost_vector),
@@ -510,10 +473,6 @@ def parse_arguments(parser):
     parser.add_argument('--num_epochs', type=int, default=5, help='')
     parser.add_argument('--learning_rate', type=float, default=0.001, help='')
     parser.add_argument('--event_num', type=int, default=10, help='')
-
-
-
-    #    args = parser.parse_args()
     return parser
 
 
@@ -554,7 +513,6 @@ def load_data(args):
     word_embedding, mask = word2vec(validate['post_text'], word_idx_map, W)
     validate['post_text'] = word_embedding
     validate['mask'] = mask
-
 
     print("translate test data to embedding")
     word_embedding, mask = word2vec(test['post_text'], word_idx_map, W)
