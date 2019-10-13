@@ -47,11 +47,6 @@ class Rumor_Data(Dataset):
 
 class ReverseLayerF(Function):
 
-
-
-    #def __init__(self, lambd):
-        #self.lambd = lambd
-
     #@staticmethod
     def forward(self, x):
         self.lambd = args.lambd
@@ -83,7 +78,6 @@ class CNN_Fusion(nn.Module):
         self.social_size = 19
 
         # TEXT RNN
-
         self.embed = nn.Embedding(vocab_size, emb_dim)
         self.embed.weight = nn.Parameter(torch.from_numpy(W))
         self.lstm = nn.LSTM(self.lstm_size, self.lstm_size)
@@ -96,8 +90,6 @@ class CNN_Fusion(nn.Module):
         window_size = [1, 2, 3, 4]
         self.convs = nn.ModuleList([nn.Conv2d(channel_in, filter_num, (K, emb_dim)) for K in window_size])
         self.fc1 = nn.Linear(len(window_size) * filter_num, self.hidden_size)
-
-
 
         self.dropout = nn.Dropout(args.dropout)
 
@@ -114,16 +106,11 @@ class CNN_Fusion(nn.Module):
         self.image_adv = nn.Linear(self.hidden_size,  int(self.hidden_size))
         self.image_encoder = nn.Linear(self.hidden_size, self.hidden_size)
 
-
-
         ###social context
         self.social = nn.Linear(self.social_size, self.hidden_size)
 
-
         ##ATTENTION
         self.attention_layer = nn.Linear(self.hidden_size, emb_dim)
-
-
 
         ## Class  Classifier
         self.class_classifier = nn.Sequential()
@@ -137,7 +124,6 @@ class CNN_Fusion(nn.Module):
         #self.class_classifier.add_module('c_fc3', nn.Linear(100, 10))
         self.class_classifier.add_module('c_softmax', nn.Softmax(dim=1))
 
-
         ###Event Classifier
         self.domain_classifier = nn.Sequential()
         self.domain_classifier.add_module('d_fc1', nn.Linear(2 * self.hidden_size, self.hidden_size))
@@ -145,11 +131,6 @@ class CNN_Fusion(nn.Module):
         self.domain_classifier.add_module('d_relu1', nn.LeakyReLU(True))
         self.domain_classifier.add_module('d_fc2', nn.Linear(self.hidden_size, self.event_num))
         self.domain_classifier.add_module('d_softmax', nn.Softmax(dim=1))
-
-
-
-
-
 
     def init_hidden(self, batch_size):
         # Before we've done anything, we dont have any hidden state.
@@ -167,16 +148,10 @@ class CNN_Fusion(nn.Module):
         return x
 
     def forward(self, text, image,  mask):
-
         ### IMAGE #####
         image = self.vgg(image) #[N, 512]
         image = F.leaky_relu(self.image_fc1(image))
-
-
-
-
-
-
+        
         ##########CNN##################
         text = self.embed(text)
         text = text * mask.unsqueeze(2).expand_as(text)
@@ -186,12 +161,7 @@ class CNN_Fusion(nn.Module):
         text = [F.max_pool1d(i, i.size(2)).squeeze(2) for i in text]
         text = torch.cat(text, 1)
         text = F.leaky_relu(self.fc1(text))
-
-
-
-
         text_image = torch.cat((text, image), 1)
-
 
         ### Fake or real
         class_output = self.class_classifier(text_image)
@@ -203,10 +173,7 @@ class CNN_Fusion(nn.Module):
         # text_reverse_feature = grad_reverse(text)
         # image_reverse_feature = grad_reverse(image)
         # text_output = self.modal_classifier(text_reverse_feature)
-        # image_output = self.modal_classifier(image_reverse_feature)
-
-
-
+        # image_output = self.modal_classifier(image_reverse_feature
         return class_output, domain_output
 
 def to_var(x):
@@ -241,8 +208,6 @@ def make_weights_for_balanced_classes(event, nclasses = 15):
         weight[idx] = weight_per_class[val]
     return weight
 
-
-
 def split_train_validation(train, percent):
     whole_len = len(train[0])
 
@@ -256,9 +221,6 @@ def split_train_validation(train, percent):
     print("train and validation data set has been splited")
 
     return train_data, validation
-
-
-
 
 
 def main(args):
@@ -286,9 +248,6 @@ def main(args):
 
     test_dataset = Rumor_Data(test) 
 
-
-
-
     # Data Loader (Input Pipeline)
     train_loader = DataLoader(dataset=train_dataset,
                               batch_size=args.batch_size,
@@ -311,8 +270,6 @@ def main(args):
 
     # Loss and Optimizer
     criterion = nn.CrossEntropyLoss()
-
-
     optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, list(model.parameters())),
                                  lr= args.learning_rate)
     #optimizer = torch.optim.RMSprop(filter(lambda p: p.requires_grad, list(model.parameters())),
@@ -339,9 +296,6 @@ def main(args):
 
         optimizer.lr = lr
         #rgs.lambd = lambd
-
-
-
         start_time = time.time()
         cost_vector = []
         class_cost_vector = []
@@ -412,18 +366,10 @@ def main(args):
         validate_acc = np.mean(validate_acc_vector_temp)
         valid_acc_vector.append(validate_acc)
         model.train()
-
-
-
-
         print ('Epoch [%d/%d],  Loss: %.4f, Class Loss: %.4f, domain loss: %.4f, Train_Acc: %.4f,  Validate_Acc: %.4f.'
                 % (
                 epoch + 1, args.num_epochs,  np.mean(cost_vector), np.mean(class_cost_vector),  np.mean(domain_cost_vector),
                     np.mean(acc_vector),   validate_acc))
-
-
-
-
 
         if validate_acc > best_validate_acc:
             best_validate_acc = validate_acc
@@ -432,7 +378,6 @@ def main(args):
 
             best_validate_dir = args.output_file + str(epoch + 1) + '.pkl'
             torch.save(model.state_dict(), best_validate_dir)
-
 
         duration = time.time() - start_time
         # print ('Epoch: %d, Mean_Cost: %.4f, Duration: %.4f, Mean_Train_Acc: %.4f, Mean_Test_Acc: %.4f'
@@ -470,8 +415,6 @@ def main(args):
     test_f1 = metrics.f1_score(test_true, test_pred, average='macro')
     test_precision = metrics.precision_score(test_true, test_pred, average='macro')
     test_recall = metrics.recall_score(test_true, test_pred, average='macro')
-
-    
     test_score_convert = [x[1] for x in test_score]
     test_aucroc = metrics.roc_auc_score(test_true, test_score_convert, average='macro')
     
