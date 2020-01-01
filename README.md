@@ -5,8 +5,8 @@
  [Yaqing Wang](http://www.acsu.buffalo.edu/~yaqingwa/),
  [Fenglong Ma](http://personal.psu.edu/ffm5105/), 
  Zhiwei Jin, Ye Yuan, 
- Guangxu Xun,
- Kishlay Jha,
+ [Guangxu Xun](https://scholar.google.com/citations?user=HhyfdQYAAAAJ&hl=en),
+ [Kishlay Jha](http://people.virginia.edu/~kj6ww/),
   [Lu Su](https://cse.buffalo.edu/~lusu/),
  [Jing Gao](https://cse.buffalo.edu/~jing/)
  
