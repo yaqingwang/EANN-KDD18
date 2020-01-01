@@ -4,7 +4,8 @@
 [EANN: Event Adversarial Neural Networks for Multi-Modal Fake News Detection](https://dl.acm.org/citation.cfm?id=3219819.3219903)  
  [Yaqing Wang](http://www.acsu.buffalo.edu/~yaqingwa/),
  [Fenglong Ma](http://personal.psu.edu/ffm5105/), 
- Zhiwei Jin, Ye Yuan, 
+ [Zhiwei Jin](https://scholar.google.com/citations?user=iv22mK4AAAAJ&hl=zh-CN), 
+ [Ye Yuan](https://scholar.google.com/citations?user=97ZPgN4AAAAJ&hl=en&authuser=1), 
  [Guangxu Xun](https://scholar.google.com/citations?user=HhyfdQYAAAAJ&hl=en),
  [Kishlay Jha](http://people.virginia.edu/~kj6ww/),
   [Lu Su](https://cse.buffalo.edu/~lusu/),
