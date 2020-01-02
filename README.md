@@ -14,7 +14,8 @@
  SUNY Buffalo. KDD, 2018.
  
  ## Dataset
- The data folder contains a subset of weibo dataset. You can download full weibo dataset via https://drive.google.com/file/d/14VQ7EWPiFeGzxp3XC2DeEHi-BEisDINn/view?usp=sharing.
+ The data folder contains a subset of weibo dataset for a quick start. 
+ If you are interested in full weibo dataset, you can download it via https://drive.google.com/file/d/14VQ7EWPiFeGzxp3XC2DeEHi-BEisDINn/view?usp=sharing.
  
  ## Main Idea
 One of the unique challenges for fake news detection on social media is how to identify fake news on  **newly emerged events**. The EANN is desgined to  __extract shared features among all events__ to effectively improve the performance of fake news detection on never-seen events.
@@ -32,7 +33,7 @@ The feature representations learned by the proposed model EANN (right) are more 
  
 
  ## Citation
-If you use this code for your research, please cite our [paper](https://dl.acm.org/citation.cfm?id=3219819.3219903):
+If you feel this code or dataset is useful for your research, please cite our [paper](https://dl.acm.org/citation.cfm?id=3219819.3219903):
 
 ```
 @inproceedings{wang2018eann,
