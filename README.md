@@ -33,7 +33,7 @@ The feature representations learned by the proposed model EANN (right) are more 
  
 
  ## Citation
-If you feel this code or dataset is useful for your research, please cite our [paper](https://dl.acm.org/citation.cfm?id=3219819.3219903):
+If this code or dataset is useful for your research, please cite our [paper](https://dl.acm.org/citation.cfm?id=3219819.3219903):
 
 ```
 @inproceedings{wang2018eann,
