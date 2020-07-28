@@ -18,8 +18,8 @@
  
  If you are interested in full weibo dataset, you can download it via https://drive.google.com/file/d/14VQ7EWPiFeGzxp3XC2DeEHi-BEisDINn/view?usp=sharing. (Approximately 1.3GB)
  
- We recently release a dataset (in Chinese) on fake news from Wechat. The dataset includes news titile, report content, news url and image url. Find more details via 
-https://github.com/yaqingwang/WeFEND-AAAI20
+**We recently release a dataset (in Chinese) on fake news from Wechat. The dataset includes news titile, report content, news url and image url. Find more details via 
+https://github.com/yaqingwang/WeFEND-AAAI20**
  
  
  ## Main Idea
