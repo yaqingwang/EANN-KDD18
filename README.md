@@ -14,13 +14,17 @@
  SUNY Buffalo. KDD, 2018.
  
  ## Dataset
+ **We recently release a dataset (in Chinese) on fake news from Wechat. The dataset includes news titile, report content, news url and image url. Find more details via 
+https://github.com/yaqingwang/WeFEND-AAAI20**
+ 
+ 
+
+ 
  The data folder contains a subset of weibo dataset for a quick start. 
  
  If you are interested in full weibo dataset, you can download it via https://drive.google.com/file/d/14VQ7EWPiFeGzxp3XC2DeEHi-BEisDINn/view?usp=sharing. (Approximately 1.3GB)
  
-**We recently release a dataset (in Chinese) on fake news from Wechat. The dataset includes news titile, report content, news url and image url. Find more details via 
-https://github.com/yaqingwang/WeFEND-AAAI20**
- 
+
  
  ## Main Idea
 One of the unique challenges for fake news detection on social media is how to identify fake news on  **newly emerged events**. The EANN is desgined to  __extract shared features among all events__ to effectively improve the performance of fake news detection on never-seen events.
